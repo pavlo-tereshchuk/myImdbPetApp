@@ -1,20 +1,12 @@
-//
-//  AppDelegate.swift
-//  myImdbPetApp
-//
-//  Created by Pavlo Tereshchuk on 28.03.22.
-//
-
 import UIKit
 import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        UITabBar.appearance().barTintColor = .black
+        UITabBar.appearance().tintColor = .yellow
         return true
     }
 
