@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E08292427FDFF1800B4D877 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3E08292327FDFF1800B4D877 /* FirebaseAnalytics */; };
+		3E08292627FDFF1800B4D877 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3E08292527FDFF1800B4D877 /* FirebaseAuth */; };
+		3E08292827FDFF1800B4D877 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3E08292727FDFF1800B4D877 /* FirebaseDatabase */; };
+		3E08292A27FDFF1800B4D877 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3E08292927FDFF1800B4D877 /* FirebaseFirestore */; };
 		3E0FEE4727F226730086C57C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FEE4627F226730086C57C /* Movie.swift */; };
 		3E17856127F7356600D99618 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E17856027F7356600D99618 /* MovieViewController.swift */; };
 		3E18A35E27F20BE5008C73F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18A35D27F20BE5008C73F4 /* AppDelegate.swift */; };
 		3E18A36027F20BE5008C73F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18A35F27F20BE5008C73F4 /* SceneDelegate.swift */; };
-		3E18A36227F20BE5008C73F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18A36127F20BE5008C73F4 /* ViewController.swift */; };
+		3E18A36227F20BE5008C73F4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18A36127F20BE5008C73F4 /* SearchViewController.swift */; };
 		3E18A36527F20BE5008C73F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E18A36327F20BE5008C73F4 /* Main.storyboard */; };
 		3E18A36827F20BE5008C73F4 /* myImdbPetApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E18A36627F20BE5008C73F4 /* myImdbPetApp.xcdatamodeld */; };
 		3E18A36D27F20BEA008C73F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E18A36B27F20BEA008C73F4 /* LaunchScreen.storyboard */; };
+		3E234DEE27FDE970007DC7DC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E234DED27FDE970007DC7DC /* SignUpViewController.swift */; };
+		3E55575C27FDBE7500CEC4A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E55575B27FDBE7500CEC4A7 /* GoogleService-Info.plist */; };
 		3E643F6127F9E2FB002CB32E /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E643F6027F9E2FB002CB32E /* Search.storyboard */; };
 		3E643F6327F9E78D002CB32E /* FavoriteLists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E643F6227F9E78D002CB32E /* FavoriteLists.storyboard */; };
 		3E643F6527F9EB50002CB32E /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E643F6427F9EB50002CB32E /* Statistics.storyboard */; };
@@ -22,7 +28,22 @@
 		3E646BB727F87AD5006A9ECA /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E646BB627F87AD5006A9ECA /* BaseTableViewCell.swift */; };
 		3EC3C9D927F626EB00442A7F /* StandartMovieCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C9D727F626EB00442A7F /* StandartMovieCell.xib */; };
 		3EC3C9DA27F626EB00442A7F /* StandartMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C9D827F626EB00442A7F /* StandartMovieCell.swift */; };
+		3EC6BA9427FDAD7F00DB56DA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6BA9327FDAD7F00DB56DA /* AuthViewController.swift */; };
+		3EC6BA9627FDAE8B00DB56DA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6BA9527FDAE8B00DB56DA /* Utilities.swift */; };
+		3EDC025C27FF2A95006145DA /* myImdbPetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC025B27FF2A95006145DA /* myImdbPetAppTests.swift */; };
+		3EDC026327FF48E8006145DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC026227FF48E8006145DA /* Constants.swift */; };
+		3EEC9FF827FC98E600B2D5B4 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FF727FC98E600B2D5B4 /* Auth.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3EDC025D27FF2A95006145DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3E18A35227F20BE5008C73F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3E18A35927F20BE5008C73F4;
+			remoteInfo = myImdbPetApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3E0FEE4627F226730086C57C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -30,22 +51,41 @@
 		3E18A35A27F20BE5008C73F4 /* myImdbPetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myImdbPetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E18A35D27F20BE5008C73F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E18A35F27F20BE5008C73F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3E18A36127F20BE5008C73F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3E18A36127F20BE5008C73F4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3E18A36427F20BE5008C73F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E18A36727F20BE5008C73F4 /* myImdbPetApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myImdbPetApp.xcdatamodel; sourceTree = "<group>"; };
 		3E18A36C27F20BEA008C73F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E18A36E27F20BEA008C73F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3E643F6027F9E2FB002CB32E /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Search.storyboard; path = myImdbPetApp/Search.storyboard; sourceTree = SOURCE_ROOT; };
+		3E234DED27FDE970007DC7DC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3E55575B27FDBE7500CEC4A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3E643F6027F9E2FB002CB32E /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Search.storyboard; path = myImdbPetApp/storyboards/Search.storyboard; sourceTree = SOURCE_ROOT; };
 		3E643F6227F9E78D002CB32E /* FavoriteLists.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoriteLists.storyboard; sourceTree = "<group>"; };
 		3E643F6427F9EB50002CB32E /* Statistics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
 		3E643F6627F9EDE2002CB32E /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		3E646BB627F87AD5006A9ECA /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		3EC3C9D727F626EB00442A7F /* StandartMovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandartMovieCell.xib; sourceTree = "<group>"; };
 		3EC3C9D827F626EB00442A7F /* StandartMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartMovieCell.swift; sourceTree = "<group>"; };
+		3EC6BA9327FDAD7F00DB56DA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		3EC6BA9527FDAE8B00DB56DA /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		3EDC025927FF2A95006145DA /* myImdbPetAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myImdbPetAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EDC025B27FF2A95006145DA /* myImdbPetAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myImdbPetAppTests.swift; sourceTree = "<group>"; };
+		3EDC026227FF48E8006145DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3EEC9FF727FC98E600B2D5B4 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3E18A35727F20BE5008C73F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E08292827FDFF1800B4D877 /* FirebaseDatabase in Frameworks */,
+				3E08292A27FDFF1800B4D877 /* FirebaseFirestore in Frameworks */,
+				3E08292427FDFF1800B4D877 /* FirebaseAnalytics in Frameworks */,
+				3E08292627FDFF1800B4D877 /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EDC025627FF2A95006145DA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -67,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				3E18A35C27F20BE5008C73F4 /* myImdbPetApp */,
+				3EDC025A27FF2A95006145DA /* myImdbPetAppTests */,
 				3E18A35B27F20BE5008C73F4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				3E18A35A27F20BE5008C73F4 /* myImdbPetApp.app */,
+				3EDC025927FF2A95006145DA /* myImdbPetAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,17 +124,14 @@
 		3E18A35C27F20BE5008C73F4 /* myImdbPetApp */ = {
 			isa = PBXGroup;
 			children = (
-				3E0FEE4827F2268B0086C57C /* Model */,
-				3EEEF35F27F469E300DE1A9D /* MovieCell */,
 				3E18A35D27F20BE5008C73F4 /* AppDelegate.swift */,
 				3E18A35F27F20BE5008C73F4 /* SceneDelegate.swift */,
+				3EC6BA9727FDAF1D00DB56DA /* Helpers */,
+				3E0FEE4827F2268B0086C57C /* Model */,
+				3EEEF35F27F469E300DE1A9D /* MovieCell */,
 				3E646BB927F8B1AA006A9ECA /* ViewController */,
-				3E18A36327F20BE5008C73F4 /* Main.storyboard */,
-				3E643F6627F9EDE2002CB32E /* Profile.storyboard */,
-				3E643F6427F9EB50002CB32E /* Statistics.storyboard */,
-				3E643F6227F9E78D002CB32E /* FavoriteLists.storyboard */,
-				3E643F6027F9E2FB002CB32E /* Search.storyboard */,
-				3E18A36B27F20BEA008C73F4 /* LaunchScreen.storyboard */,
+				3EEC9FF627FC985C00B2D5B4 /* storyboards */,
+				3E55575B27FDBE7500CEC4A7 /* GoogleService-Info.plist */,
 				3E18A36E27F20BEA008C73F4 /* Info.plist */,
 				3E18A36627F20BE5008C73F4 /* myImdbPetApp.xcdatamodeld */,
 			);
@@ -102,10 +141,44 @@
 		3E646BB927F8B1AA006A9ECA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3E18A36127F20BE5008C73F4 /* ViewController.swift */,
+				3E18A36127F20BE5008C73F4 /* SearchViewController.swift */,
 				3E17856027F7356600D99618 /* MovieViewController.swift */,
+				3E234DED27FDE970007DC7DC /* SignUpViewController.swift */,
+				3EC6BA9327FDAD7F00DB56DA /* AuthViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3EC6BA9727FDAF1D00DB56DA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3EC6BA9527FDAE8B00DB56DA /* Utilities.swift */,
+				3EDC026227FF48E8006145DA /* Constants.swift */,
+				3E646BB627F87AD5006A9ECA /* BaseTableViewCell.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3EDC025A27FF2A95006145DA /* myImdbPetAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				3EDC025B27FF2A95006145DA /* myImdbPetAppTests.swift */,
+			);
+			path = myImdbPetAppTests;
+			sourceTree = "<group>";
+		};
+		3EEC9FF627FC985C00B2D5B4 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3E18A36327F20BE5008C73F4 /* Main.storyboard */,
+				3E643F6627F9EDE2002CB32E /* Profile.storyboard */,
+				3E643F6427F9EB50002CB32E /* Statistics.storyboard */,
+				3E643F6227F9E78D002CB32E /* FavoriteLists.storyboard */,
+				3E643F6027F9E2FB002CB32E /* Search.storyboard */,
+				3EEC9FF727FC98E600B2D5B4 /* Auth.storyboard */,
+				3E18A36B27F20BEA008C73F4 /* LaunchScreen.storyboard */,
+			);
+			path = storyboards;
 			sourceTree = "<group>";
 		};
 		3EEEF35F27F469E300DE1A9D /* MovieCell */ = {
@@ -113,7 +186,6 @@
 			children = (
 				3EC3C9D827F626EB00442A7F /* StandartMovieCell.swift */,
 				3EC3C9D727F626EB00442A7F /* StandartMovieCell.xib */,
-				3E646BB627F87AD5006A9ECA /* BaseTableViewCell.swift */,
 			);
 			path = MovieCell;
 			sourceTree = "<group>";
@@ -134,9 +206,33 @@
 			dependencies = (
 			);
 			name = myImdbPetApp;
+			packageProductDependencies = (
+				3E08292327FDFF1800B4D877 /* FirebaseAnalytics */,
+				3E08292527FDFF1800B4D877 /* FirebaseAuth */,
+				3E08292727FDFF1800B4D877 /* FirebaseDatabase */,
+				3E08292927FDFF1800B4D877 /* FirebaseFirestore */,
+			);
 			productName = myImdbPetApp;
 			productReference = 3E18A35A27F20BE5008C73F4 /* myImdbPetApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3EDC025827FF2A95006145DA /* myImdbPetAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EDC026127FF2A95006145DA /* Build configuration list for PBXNativeTarget "myImdbPetAppTests" */;
+			buildPhases = (
+				3EDC025527FF2A95006145DA /* Sources */,
+				3EDC025627FF2A95006145DA /* Frameworks */,
+				3EDC025727FF2A95006145DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EDC025E27FF2A95006145DA /* PBXTargetDependency */,
+			);
+			name = myImdbPetAppTests;
+			productName = myImdbPetAppTests;
+			productReference = 3EDC025927FF2A95006145DA /* myImdbPetAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -151,6 +247,10 @@
 					3E18A35927F20BE5008C73F4 = {
 						CreatedOnToolsVersion = 13.3;
 					};
+					3EDC025827FF2A95006145DA = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 3E18A35927F20BE5008C73F4;
+					};
 				};
 			};
 			buildConfigurationList = 3E18A35527F20BE5008C73F4 /* Build configuration list for PBXProject "myImdbPetApp" */;
@@ -162,11 +262,15 @@
 				Base,
 			);
 			mainGroup = 3E18A35127F20BE5008C73F4;
+			packageReferences = (
+				3E08292227FDFF1800B4D877 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 3E18A35B27F20BE5008C73F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				3E18A35927F20BE5008C73F4 /* myImdbPetApp */,
+				3EDC025827FF2A95006145DA /* myImdbPetAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -177,11 +281,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E643F6727F9EDE2002CB32E /* Profile.storyboard in Resources */,
+				3E55575C27FDBE7500CEC4A7 /* GoogleService-Info.plist in Resources */,
 				3E18A36D27F20BEA008C73F4 /* LaunchScreen.storyboard in Resources */,
 				3E643F6127F9E2FB002CB32E /* Search.storyboard in Resources */,
 				3E643F6327F9E78D002CB32E /* FavoriteLists.storyboard in Resources */,
 				3E643F6527F9EB50002CB32E /* Statistics.storyboard in Resources */,
 				3E18A36527F20BE5008C73F4 /* Main.storyboard in Resources */,
+				3EEC9FF827FC98E600B2D5B4 /* Auth.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EDC025727FF2A95006145DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,8 +307,12 @@
 			files = (
 				3EC3C9D927F626EB00442A7F /* StandartMovieCell.xib in Sources */,
 				3EC3C9DA27F626EB00442A7F /* StandartMovieCell.swift in Sources */,
-				3E18A36227F20BE5008C73F4 /* ViewController.swift in Sources */,
+				3E234DEE27FDE970007DC7DC /* SignUpViewController.swift in Sources */,
+				3EC6BA9627FDAE8B00DB56DA /* Utilities.swift in Sources */,
+				3EC6BA9427FDAD7F00DB56DA /* AuthViewController.swift in Sources */,
+				3E18A36227F20BE5008C73F4 /* SearchViewController.swift in Sources */,
 				3E17856127F7356600D99618 /* MovieViewController.swift in Sources */,
+				3EDC026327FF48E8006145DA /* Constants.swift in Sources */,
 				3E646BB727F87AD5006A9ECA /* BaseTableViewCell.swift in Sources */,
 				3E18A36827F20BE5008C73F4 /* myImdbPetApp.xcdatamodeld in Sources */,
 				3E18A35E27F20BE5008C73F4 /* AppDelegate.swift in Sources */,
@@ -204,7 +321,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3EDC025527FF2A95006145DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EDC025C27FF2A95006145DA /* myImdbPetAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3EDC025E27FF2A95006145DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3E18A35927F20BE5008C73F4 /* myImdbPetApp */;
+			targetProxy = 3EDC025D27FF2A95006145DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3E18A36327F20BE5008C73F4 /* Main.storyboard */ = {
@@ -394,6 +527,40 @@
 			};
 			name = Release;
 		};
+		3EDC025F27FF2A95006145DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = easypeasyincorp.myImdbPetAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myImdbPetApp.app/myImdbPetApp";
+			};
+			name = Debug;
+		};
+		3EDC026027FF2A95006145DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = easypeasyincorp.myImdbPetAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myImdbPetApp.app/myImdbPetApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -415,7 +582,50 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		3EDC026127FF2A95006145DA /* Build configuration list for PBXNativeTarget "myImdbPetAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EDC025F27FF2A95006145DA /* Debug */,
+				3EDC026027FF2A95006145DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3E08292227FDFF1800B4D877 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 8.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3E08292327FDFF1800B4D877 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E08292227FDFF1800B4D877 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3E08292527FDFF1800B4D877 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E08292227FDFF1800B4D877 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		3E08292727FDFF1800B4D877 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E08292227FDFF1800B4D877 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		3E08292927FDFF1800B4D877 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E08292227FDFF1800B4D877 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3E18A36627F20BE5008C73F4 /* myImdbPetApp.xcdatamodeld */ = {

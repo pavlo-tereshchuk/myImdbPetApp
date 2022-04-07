@@ -16,39 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ira-fI-wyS"/>
+                    <navigationItem key="navigationItem" id="9Kr-TO-H4C"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="59.598214285714285"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="jSv-fW-RrY">
+        <scene sceneID="CdS-UR-NjM">
             <objects>
-                <navigationController storyboardIdentifier="ProfileVC" automaticallyAdjustsScrollViewInsets="NO" id="PaR-a7-Z5q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="person.circle" catalog="system" id="blD-XT-4gG"/>
+                <navigationController storyboardIdentifier="StatVC" automaticallyAdjustsScrollViewInsets="NO" id="NmL-Cc-wMx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="chart.bar.xaxis" catalog="system" id="WKp-P8-igV"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iPI-7M-sUU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dY2-7a-6h0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="vNN-VG-EpT"/>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="MUE-0p-Jfx"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tUa-UA-hrt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ea-7J-xwH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="59.598214285714285"/>
         </scene>
     </scenes>
     <resources>
-        <image name="person.circle" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="chart.bar.xaxis" catalog="system" width="32" height="32"/>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

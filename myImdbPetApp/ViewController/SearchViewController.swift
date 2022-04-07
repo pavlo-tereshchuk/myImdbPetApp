@@ -7,38 +7,44 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SearchViewController: UIViewController {
     @IBOutlet var mainTable: UITableView!
     var contents = [Movie]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        contents.append(Movie( title: "Seven", year: 1999, genre: "Thriller, Detective"))
-        contents.append(Movie( title: "X-men", year: 2002, genre: "Fiction, Super-hero"))
-        contents.append(Movie( title: "Fight Club", year: 1999, genre: "Criminal, Detective"))
-        contents.append(Movie( title: "Pulp Fiction", year: 1999, genre: "Thriller, Detective"))
-        contents.append(Movie( title: "Spider-man", year: 2001, genre: "Fiction, Super-hero"))
-        contents.append(Movie( title: "Seven", year: 1999, genre: "Thriller, Detective"))
-        contents.append(Movie( title: "X-men", year: 2002, genre: "Fiction, Super-hero"))
-        contents.append(Movie( title: "Fight Club", year: 1999, genre: "Criminal, Detective"))
-        contents.append(Movie( title: "Pulp Fiction", year: 1999, genre: "Thriller, Detective"))
-        contents.append(Movie( title: "Spider-man", year: 2001, genre: "Fiction, Super-hero"))
-        contents.append(Movie( title: "Seven", year: 1999, genre: "Thriller, Detective"))
-        contents.append(Movie( title: "X-men", year: 2002, genre: "Fiction, Super-hero"))
-        contents.append(Movie( title: "Fight Club", year: 1999, genre: "Criminal, Detective"))
-        contents.append(Movie( title: "Pulp Fiction", year: 1999, genre: "Thriller, Detective"))
-        contents.append(Movie( title: "Spider-man", year: 2001, genre: "Fiction, Super-hero"))
-        
+        setUpUITable()
+        setUpContents()
+    }
+    
+    func setUpUITable(){
         mainTable.dataSource = self
         mainTable.delegate = self
         mainTable.separatorStyle = .none
         mainTable.showsVerticalScrollIndicator = false
         mainTable.register(StandartMovieCell.getNib(), forCellReuseIdentifier: StandartMovieCell.identifier)
-//        mainTable.backgroundView =
+    }
+    
+    func setUpContents(){
+        contents.append(Movie( title: "Seven", year: 1999, genre: "Thriller, Detective"))
+        contents.append(Movie( title: "X-men", year: 2002, genre: "Fiction, Super-hero"))
+        contents.append(Movie( title: "Fight Club", year: 1999, genre: "Criminal, Detective"))
+        contents.append(Movie( title: "Pulp Fiction", year: 1999, genre: "Thriller, Detective"))
+        contents.append(Movie( title: "Spider-man", year: 2001, genre: "Fiction, Super-hero"))
+        contents.append(Movie( title: "Seven", year: 1999, genre: "Thriller, Detective"))
+        contents.append(Movie( title: "X-men", year: 2002, genre: "Fiction, Super-hero"))
+        contents.append(Movie( title: "Fight Club", year: 1999, genre: "Criminal, Detective"))
+        contents.append(Movie( title: "Pulp Fiction", year: 1999, genre: "Thriller, Detective"))
+        contents.append(Movie( title: "Spider-man", year: 2001, genre: "Fiction, Super-hero"))
+        contents.append(Movie( title: "Seven", year: 1999, genre: "Thriller, Detective"))
+        contents.append(Movie( title: "X-men", year: 2002, genre: "Fiction, Super-hero"))
+        contents.append(Movie( title: "Fight Club", year: 1999, genre: "Criminal, Detective"))
+        contents.append(Movie( title: "Pulp Fiction", year: 1999, genre: "Thriller, Detective"))
+        contents.append(Movie( title: "Spider-man", year: 2001, genre: "Fiction, Super-hero"))
     }
 }
 
-extension ViewController : UITableViewDataSource, UITableViewDelegate {
+extension SearchViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contents.count
