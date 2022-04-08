@@ -145,7 +145,7 @@
                     <navigationItem key="navigationItem" id="nqb-ql-izW"/>
                     <connections>
                         <outlet property="emailField" destination="xjX-0N-zqU" id="aRW-Iq-nps"/>
-                        <outlet property="errorLabel" destination="NRQ-zQ-i3J" id="PFL-Bq-aMy"/>
+                        <outlet property="errorLabel" destination="NRQ-zQ-i3J" id="WfM-WN-nEJ"/>
                         <outlet property="firstNameField" destination="YTK-F0-2Ms" id="ukV-A6-LCP"/>
                         <outlet property="lastNameField" destination="S2N-Sw-00x" id="Shb-BA-agb"/>
                         <outlet property="passwordField" destination="9DM-sa-nRu" id="Vpd-XW-48N"/>
@@ -174,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="59.598214285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="tTX-Sw-Tux">
             <objects>
-                <viewController id="yrS-JS-SHk" sceneMemberID="viewController">
+                <viewController id="yrS-JS-SHk" customClass="LogInViewController" customModule="myImdbPetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Me-JV-DaB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,6 +207,9 @@
                                         <rect key="frame" x="0.0" y="110" width="250" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Login"/>
+                                        <connections>
+                                            <action selector="loginTapped:" destination="yrS-JS-SHk" eventType="touchUpInside" id="lKU-hR-yPL"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="737-e4-27L">
                                         <rect key="frame" x="0.0" y="156" width="250" height="20.5"/>
@@ -225,6 +228,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vWt-k2-4D2"/>
+                    <connections>
+                        <outlet property="emailField" destination="5Q6-qR-hHz" id="qNY-1c-SRd"/>
+                        <outlet property="errorLabel" destination="737-e4-27L" id="Y6R-lM-coU"/>
+                        <outlet property="loginButton" destination="0T1-3X-OYh" id="K74-x2-tSe"/>
+                        <outlet property="passwordField" destination="2U8-XE-Ke5" id="Q4c-R4-Lao"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkB-3M-ahH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

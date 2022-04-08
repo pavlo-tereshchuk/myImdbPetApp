@@ -26,6 +26,9 @@
 		3E643F6527F9EB50002CB32E /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E643F6427F9EB50002CB32E /* Statistics.storyboard */; };
 		3E643F6727F9EDE2002CB32E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E643F6627F9EDE2002CB32E /* Profile.storyboard */; };
 		3E646BB727F87AD5006A9ECA /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E646BB627F87AD5006A9ECA /* BaseTableViewCell.swift */; };
+		3E6F3962280065700074A952 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F3961280065700074A952 /* LogInViewController.swift */; };
+		3E6F3964280066530074A952 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F3963280066530074A952 /* User.swift */; };
+		3E6F39672800677F0074A952 /* BaseAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F39662800677F0074A952 /* BaseAuthViewController.swift */; };
 		3EC3C9D927F626EB00442A7F /* StandartMovieCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C9D727F626EB00442A7F /* StandartMovieCell.xib */; };
 		3EC3C9DA27F626EB00442A7F /* StandartMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C9D827F626EB00442A7F /* StandartMovieCell.swift */; };
 		3EC6BA9427FDAD7F00DB56DA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6BA9327FDAD7F00DB56DA /* AuthViewController.swift */; };
@@ -63,6 +66,9 @@
 		3E643F6427F9EB50002CB32E /* Statistics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
 		3E643F6627F9EDE2002CB32E /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		3E646BB627F87AD5006A9ECA /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		3E6F3961280065700074A952 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		3E6F3963280066530074A952 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3E6F39662800677F0074A952 /* BaseAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuthViewController.swift; sourceTree = "<group>"; };
 		3EC3C9D727F626EB00442A7F /* StandartMovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandartMovieCell.xib; sourceTree = "<group>"; };
 		3EC3C9D827F626EB00442A7F /* StandartMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartMovieCell.swift; sourceTree = "<group>"; };
 		3EC6BA9327FDAD7F00DB56DA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				3E0FEE4627F226730086C57C /* Movie.swift */,
+				3E6F3963280066530074A952 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,10 +150,20 @@
 			children = (
 				3E18A36127F20BE5008C73F4 /* SearchViewController.swift */,
 				3E17856027F7356600D99618 /* MovieViewController.swift */,
+				3E6F3965280066C50074A952 /* Authentication */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3E6F3965280066C50074A952 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				3E6F3961280065700074A952 /* LogInViewController.swift */,
+				3E6F39662800677F0074A952 /* BaseAuthViewController.swift */,
 				3E234DED27FDE970007DC7DC /* SignUpViewController.swift */,
 				3EC6BA9327FDAD7F00DB56DA /* AuthViewController.swift */,
 			);
-			path = ViewController;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		3EC6BA9727FDAF1D00DB56DA /* Helpers */ = {
@@ -308,13 +325,16 @@
 				3EC3C9D927F626EB00442A7F /* StandartMovieCell.xib in Sources */,
 				3EC3C9DA27F626EB00442A7F /* StandartMovieCell.swift in Sources */,
 				3E234DEE27FDE970007DC7DC /* SignUpViewController.swift in Sources */,
+				3E6F39672800677F0074A952 /* BaseAuthViewController.swift in Sources */,
 				3EC6BA9627FDAE8B00DB56DA /* Utilities.swift in Sources */,
 				3EC6BA9427FDAD7F00DB56DA /* AuthViewController.swift in Sources */,
 				3E18A36227F20BE5008C73F4 /* SearchViewController.swift in Sources */,
 				3E17856127F7356600D99618 /* MovieViewController.swift in Sources */,
 				3EDC026327FF48E8006145DA /* Constants.swift in Sources */,
+				3E6F3964280066530074A952 /* User.swift in Sources */,
 				3E646BB727F87AD5006A9ECA /* BaseTableViewCell.swift in Sources */,
 				3E18A36827F20BE5008C73F4 /* myImdbPetApp.xcdatamodeld in Sources */,
+				3E6F3962280065700074A952 /* LogInViewController.swift in Sources */,
 				3E18A35E27F20BE5008C73F4 /* AppDelegate.swift in Sources */,
 				3E18A36027F20BE5008C73F4 /* SceneDelegate.swift in Sources */,
 				3E0FEE4727F226730086C57C /* Movie.swift in Sources */,

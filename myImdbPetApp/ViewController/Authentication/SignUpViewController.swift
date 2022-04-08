@@ -8,16 +8,14 @@
 import UIKit
 import FirebaseAuth
 import Firebase
-import FirebaseCore
 import FirebaseFirestore
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: BaseAuthViewController {
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var errorLabel: UILabel!
     
 
     override func viewDidLoad() {
@@ -68,31 +66,21 @@ class SignUpViewController: UIViewController {
             let email = emailField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             Auth.auth().createUser(withEmail: email, password: password){
-                (result, error) in
+                [weak self](result, error) in
+                guard let strongSelf = self else {return}
                 if error != nil {
-                    self.showError(message: "Error creating user")
+                    strongSelf.showError(message: "Error creating user")
                 } else {
                     let db = Firestore.firestore()
                     db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName, "uid":result!.user.uid], completion: {
                         error in
                         if error != nil {
-                            self.showError(message: "User was not added to db")
+                            strongSelf.showError(message: "User was not added to db")
                         }
                     })
-                    self.homeVC()
+                    strongSelf.showSuccessVC()
                 }
             }
         }
-    }
-    
-    func showError(message:String){
-        errorLabel.text = message
-        errorLabel.alpha = 1
-    }
-    
-    
-    func homeVC(){
-        let vc = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboards.SuccessfulAuthVC)
-        navigationController?.pushViewController(vc!, animated: true)
     }
 }
