@@ -9,7 +9,8 @@ import UIKit
 
 class SearchViewController: UIViewController {
     @IBOutlet var mainTable: UITableView!
-    let network = BaseNetworkRequest.getInstance()
+    private let refreshControl = UIRefreshControl()
+    private let network = BaseNetworkRequest.getInstance()
     var contents = [Movie]()
 
     override func viewDidLoad() {
@@ -24,6 +25,19 @@ class SearchViewController: UIViewController {
         mainTable.separatorStyle = .none
         mainTable.showsVerticalScrollIndicator = false
         mainTable.register(StandartMovieCell.getNib(), forCellReuseIdentifier: StandartMovieCell.identifier)
+        
+        if #available(iOS 10.0, *) {
+            mainTable.refreshControl = refreshControl
+        } else {
+            mainTable.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(refreshMoviesList(_:)), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Updating")
+    }
+    
+    @objc func refreshMoviesList(_ sender: Any){
+        getContent()
     }
     
     func getContent(){
@@ -34,6 +48,7 @@ class SearchViewController: UIViewController {
                     strongSelf.contents = data.items
                     DispatchQueue.main.async {
                         strongSelf.mainTable.reloadData()
+                        strongSelf.refreshControl.endRefreshing()
                     }
                     case .error(let error):
                     strongSelf.present(error: error)
@@ -54,7 +69,7 @@ extension SearchViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StandartMovieCell.identifier, for: indexPath) as! (StandartMovieCell)
-        cell.configure(Image: "", Title: contents[indexPath.row].fullTitle, Year: contents[indexPath.row].year)
+        cell.configure(Image: "", Title: contents[indexPath.row].title, Year: contents[indexPath.row].year, Poster: contents[indexPath.row].image)
         return cell
     }
     
@@ -65,7 +80,7 @@ extension SearchViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 120
     }
 }
 
