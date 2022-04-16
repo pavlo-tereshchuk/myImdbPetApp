@@ -20,33 +20,11 @@ class LogInViewController: BaseAuthViewController {
         // Do any additional setup after loading the view.
     }
     
-    func validityCheck() -> Bool {
-        var message = ""
-        if(emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-           passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""){
-            message = "Please fill all the fields"
-        }
-        
-        if !Utilities.validateEmail(email: emailField.text!){
-            message = "Wrong email"
-        }
-        
-        if let length = passwordField.text?.count, length < 6 {
-            message = "Your password must contain at least 6 symbols"
-        }
-        
-        if (message == "") {
-            errorLabel.alpha = 0
-            return true
-        }
-        showError(message: message)
-        return false
-    }
     
     @IBAction func loginTapped(_ sender: Any) {
-        if validityCheck() {
-            let email = emailField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let password = passwordField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        do {
+            let email = try Validation.validationEmail(email: emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines))
+            let password = try Validation.validationPassword(password: passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines))
             Auth.auth().signIn(withEmail: email, password: password){ [weak self] result, error in
                 guard let strongSelf = self else { return }
                 if error != nil {
@@ -69,6 +47,9 @@ class LogInViewController: BaseAuthViewController {
                 }
                 
             }
+        }
+        catch{
+            present(error: error as! LocalizedError)
         }
     }
     

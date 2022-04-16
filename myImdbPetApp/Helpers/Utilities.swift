@@ -18,6 +18,7 @@ public class Utilities {
         button.insertSubview(blur, at: 0)
     }
     
+    
     public static func validatePassword(password:String)-> Bool{
         let regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$&*]).{6,24}$"
         return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: password)

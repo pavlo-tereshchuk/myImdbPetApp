@@ -28,59 +28,31 @@ class SignUpViewController: BaseAuthViewController {
         errorLabel.alpha = 0
     }
     
-    func validityCheck() -> Bool {
-        var message = ""
-        if(firstNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-           lastNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-           emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-           passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""){
-            message = "Please fill all the fields"
-        }
-        
-        if !Utilities.validateEmail(email: emailField.text!){
-            message = "Wrong email"
-        }
-        
-        if !Utilities.validatePassword(password: passwordField.text!){
-            message = "Your password must contain a special character (!@#$&*), uppercase and a number"
-        }
-        
-        if let length = passwordField.text?.count, length < 6 {
-            message = "Your password must contain at least 6 symbols"
-        }
-        
-        
-        
-        if (message == "") {
-            errorLabel.alpha = 0
-            return true
-        }
-        showError(message: message)
-        return false
-    }
-    
     @IBAction func signUpTapped(_ sender: Any) {
-        if validityCheck(){
-            let firstName = firstNameField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let lastName = lastNameField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let email = emailField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let password = passwordField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        do  {
+            let firstName = try Validation.validationName(name: firstNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines))
+            let lastName = try Validation.validationLastName(lastName: lastNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines))
+            let email = try Validation.validationEmail(email: emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines))
+            let password = try Validation.validationPassword(password: passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines))
             Auth.auth().createUser(withEmail: email, password: password){
                 [weak self](result, error) in
                 guard let strongSelf = self else {return}
                 if error != nil {
-                    strongSelf.showError(message: "Error creating user")
+                    strongSelf.showError(message: error?.localizedDescription ?? "Error creating user")
                 } else {
                     let db = Firestore.firestore()
                     db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName, "uid":result!.user.uid], completion: {
                         error in
                         if error != nil {
-                            strongSelf.showError(message: "User was not added to db")
+                            strongSelf.showError(message: error?.localizedDescription ?? "Error adding user")
                         }
                     })
                     strongSelf.showSuccessVC()
                 }
             }
+        }
+        catch {
+            present(error: error as! LocalizedError)
         }
     }
 }

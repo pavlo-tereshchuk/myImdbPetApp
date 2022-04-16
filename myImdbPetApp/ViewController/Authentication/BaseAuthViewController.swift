@@ -15,8 +15,6 @@ class BaseAuthViewController: UIViewController{
         super.viewDidLoad()
     }
     
-   
-    
     func showError(message:String){
         errorLabel.text = message
         errorLabel.alpha = 1

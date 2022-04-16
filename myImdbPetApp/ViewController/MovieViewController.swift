@@ -14,6 +14,8 @@ class MovieViewController : UIViewController{
     @IBOutlet weak var yearLable:UILabel!
     private var movie:Movie?
     
+    public static let identifier = "MovieViewController"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let movie = movie {

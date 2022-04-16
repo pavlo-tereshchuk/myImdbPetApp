@@ -21,9 +21,9 @@ class StandartMovieCell: BaseTableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    public func configure(Image image:String, Title title:String, Year year:Int){
+    public func configure(Image image:String, Title title:String, Year year:String){
         titleLable.text = title
-        yearLable.text = String(year)
+        yearLable.text = year
     }
     
 

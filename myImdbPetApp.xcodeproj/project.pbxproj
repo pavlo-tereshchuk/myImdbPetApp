@@ -12,6 +12,9 @@
 		3E08292827FDFF1800B4D877 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3E08292727FDFF1800B4D877 /* FirebaseDatabase */; };
 		3E08292A27FDFF1800B4D877 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3E08292927FDFF1800B4D877 /* FirebaseFirestore */; };
 		3E0FEE4727F226730086C57C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FEE4627F226730086C57C /* Movie.swift */; };
+		3E10428C2802F39500A18CB7 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E10428B2802F39500A18CB7 /* Validation.swift */; };
+		3E10428E2802F3AD00A18CB7 /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E10428D2802F3AD00A18CB7 /* Exceptions.swift */; };
+		3E10429028031C9100A18CB7 /* AuthnticationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E10428F28031C9100A18CB7 /* AuthnticationTest.swift */; };
 		3E17856127F7356600D99618 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E17856027F7356600D99618 /* MovieViewController.swift */; };
 		3E18A35E27F20BE5008C73F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18A35D27F20BE5008C73F4 /* AppDelegate.swift */; };
 		3E18A36027F20BE5008C73F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E18A35F27F20BE5008C73F4 /* SceneDelegate.swift */; };
@@ -20,12 +23,14 @@
 		3E18A36827F20BE5008C73F4 /* myImdbPetApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E18A36627F20BE5008C73F4 /* myImdbPetApp.xcdatamodeld */; };
 		3E18A36D27F20BEA008C73F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E18A36B27F20BEA008C73F4 /* LaunchScreen.storyboard */; };
 		3E234DEE27FDE970007DC7DC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E234DED27FDE970007DC7DC /* SignUpViewController.swift */; };
+		3E4916FD28061F1E00917517 /* MoviesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4916FC28061F1E00917517 /* MoviesList.swift */; };
 		3E55575C27FDBE7500CEC4A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E55575B27FDBE7500CEC4A7 /* GoogleService-Info.plist */; };
 		3E643F6127F9E2FB002CB32E /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E643F6027F9E2FB002CB32E /* Search.storyboard */; };
 		3E643F6327F9E78D002CB32E /* FavoriteLists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E643F6227F9E78D002CB32E /* FavoriteLists.storyboard */; };
 		3E643F6527F9EB50002CB32E /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E643F6427F9EB50002CB32E /* Statistics.storyboard */; };
 		3E643F6727F9EDE2002CB32E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E643F6627F9EDE2002CB32E /* Profile.storyboard */; };
 		3E646BB727F87AD5006A9ECA /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E646BB627F87AD5006A9ECA /* BaseTableViewCell.swift */; };
+		3E65279428045D270037BDAE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3E65279328045D270037BDAE /* Alamofire */; };
 		3E6F3962280065700074A952 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F3961280065700074A952 /* LogInViewController.swift */; };
 		3E6F3964280066530074A952 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F3963280066530074A952 /* User.swift */; };
 		3E6F39672800677F0074A952 /* BaseAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F39662800677F0074A952 /* BaseAuthViewController.swift */; };
@@ -33,6 +38,7 @@
 		3EC3C9DA27F626EB00442A7F /* StandartMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C9D827F626EB00442A7F /* StandartMovieCell.swift */; };
 		3EC6BA9427FDAD7F00DB56DA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6BA9327FDAD7F00DB56DA /* AuthViewController.swift */; };
 		3EC6BA9627FDAE8B00DB56DA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6BA9527FDAE8B00DB56DA /* Utilities.swift */; };
+		3ED127692805E1830083B6DE /* BaseNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED127682805E1830083B6DE /* BaseNetworkRequest.swift */; };
 		3EDC025C27FF2A95006145DA /* myImdbPetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC025B27FF2A95006145DA /* myImdbPetAppTests.swift */; };
 		3EDC026327FF48E8006145DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC026227FF48E8006145DA /* Constants.swift */; };
 		3EEC9FF827FC98E600B2D5B4 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FF727FC98E600B2D5B4 /* Auth.storyboard */; };
@@ -50,6 +56,9 @@
 
 /* Begin PBXFileReference section */
 		3E0FEE4627F226730086C57C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		3E10428B2802F39500A18CB7 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		3E10428D2802F3AD00A18CB7 /* Exceptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exceptions.swift; sourceTree = "<group>"; };
+		3E10428F28031C9100A18CB7 /* AuthnticationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthnticationTest.swift; sourceTree = "<group>"; };
 		3E17856027F7356600D99618 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieViewController.swift; path = myImdbPetApp/ViewController/MovieViewController.swift; sourceTree = SOURCE_ROOT; };
 		3E18A35A27F20BE5008C73F4 /* myImdbPetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myImdbPetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E18A35D27F20BE5008C73F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +69,7 @@
 		3E18A36C27F20BEA008C73F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E18A36E27F20BEA008C73F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E234DED27FDE970007DC7DC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3E4916FC28061F1E00917517 /* MoviesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesList.swift; sourceTree = "<group>"; };
 		3E55575B27FDBE7500CEC4A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3E643F6027F9E2FB002CB32E /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Search.storyboard; path = myImdbPetApp/storyboards/Search.storyboard; sourceTree = SOURCE_ROOT; };
 		3E643F6227F9E78D002CB32E /* FavoriteLists.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoriteLists.storyboard; sourceTree = "<group>"; };
@@ -73,6 +83,7 @@
 		3EC3C9D827F626EB00442A7F /* StandartMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartMovieCell.swift; sourceTree = "<group>"; };
 		3EC6BA9327FDAD7F00DB56DA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		3EC6BA9527FDAE8B00DB56DA /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		3ED127682805E1830083B6DE /* BaseNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkRequest.swift; sourceTree = "<group>"; };
 		3EDC025927FF2A95006145DA /* myImdbPetAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myImdbPetAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDC025B27FF2A95006145DA /* myImdbPetAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myImdbPetAppTests.swift; sourceTree = "<group>"; };
 		3EDC026227FF48E8006145DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -84,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E65279428045D270037BDAE /* Alamofire in Frameworks */,
 				3E08292827FDFF1800B4D877 /* FirebaseDatabase in Frameworks */,
 				3E08292A27FDFF1800B4D877 /* FirebaseFirestore in Frameworks */,
 				3E08292427FDFF1800B4D877 /* FirebaseAnalytics in Frameworks */,
@@ -104,7 +116,9 @@
 		3E0FEE4827F2268B0086C57C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3E4916FC28061F1E00917517 /* MoviesList.swift */,
 				3E0FEE4627F226730086C57C /* Movie.swift */,
+				3E10428D2802F3AD00A18CB7 /* Exceptions.swift */,
 				3E6F3963280066530074A952 /* User.swift */,
 			);
 			path = Model;
@@ -135,6 +149,7 @@
 				3E18A35F27F20BE5008C73F4 /* SceneDelegate.swift */,
 				3EC6BA9727FDAF1D00DB56DA /* Helpers */,
 				3E0FEE4827F2268B0086C57C /* Model */,
+				3ED127672805E1270083B6DE /* Network */,
 				3EEEF35F27F469E300DE1A9D /* MovieCell */,
 				3E646BB927F8B1AA006A9ECA /* ViewController */,
 				3EEC9FF627FC985C00B2D5B4 /* storyboards */,
@@ -170,16 +185,26 @@
 			isa = PBXGroup;
 			children = (
 				3EC6BA9527FDAE8B00DB56DA /* Utilities.swift */,
+				3E10428B2802F39500A18CB7 /* Validation.swift */,
 				3EDC026227FF48E8006145DA /* Constants.swift */,
 				3E646BB627F87AD5006A9ECA /* BaseTableViewCell.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		3ED127672805E1270083B6DE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3ED127682805E1830083B6DE /* BaseNetworkRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		3EDC025A27FF2A95006145DA /* myImdbPetAppTests */ = {
 			isa = PBXGroup;
 			children = (
 				3EDC025B27FF2A95006145DA /* myImdbPetAppTests.swift */,
+				3E10428F28031C9100A18CB7 /* AuthnticationTest.swift */,
 			);
 			path = myImdbPetAppTests;
 			sourceTree = "<group>";
@@ -228,6 +253,7 @@
 				3E08292527FDFF1800B4D877 /* FirebaseAuth */,
 				3E08292727FDFF1800B4D877 /* FirebaseDatabase */,
 				3E08292927FDFF1800B4D877 /* FirebaseFirestore */,
+				3E65279328045D270037BDAE /* Alamofire */,
 			);
 			productName = myImdbPetApp;
 			productReference = 3E18A35A27F20BE5008C73F4 /* myImdbPetApp.app */;
@@ -281,6 +307,7 @@
 			mainGroup = 3E18A35127F20BE5008C73F4;
 			packageReferences = (
 				3E08292227FDFF1800B4D877 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				3E65279228045D270037BDAE /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3E18A35B27F20BE5008C73F4 /* Products */;
 			projectDirPath = "";
@@ -323,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EC3C9D927F626EB00442A7F /* StandartMovieCell.xib in Sources */,
+				3E10428E2802F3AD00A18CB7 /* Exceptions.swift in Sources */,
 				3EC3C9DA27F626EB00442A7F /* StandartMovieCell.swift in Sources */,
 				3E234DEE27FDE970007DC7DC /* SignUpViewController.swift in Sources */,
 				3E6F39672800677F0074A952 /* BaseAuthViewController.swift in Sources */,
@@ -331,12 +359,15 @@
 				3E18A36227F20BE5008C73F4 /* SearchViewController.swift in Sources */,
 				3E17856127F7356600D99618 /* MovieViewController.swift in Sources */,
 				3EDC026327FF48E8006145DA /* Constants.swift in Sources */,
+				3ED127692805E1830083B6DE /* BaseNetworkRequest.swift in Sources */,
+				3E10428C2802F39500A18CB7 /* Validation.swift in Sources */,
 				3E6F3964280066530074A952 /* User.swift in Sources */,
 				3E646BB727F87AD5006A9ECA /* BaseTableViewCell.swift in Sources */,
 				3E18A36827F20BE5008C73F4 /* myImdbPetApp.xcdatamodeld in Sources */,
 				3E6F3962280065700074A952 /* LogInViewController.swift in Sources */,
 				3E18A35E27F20BE5008C73F4 /* AppDelegate.swift in Sources */,
 				3E18A36027F20BE5008C73F4 /* SceneDelegate.swift in Sources */,
+				3E4916FD28061F1E00917517 /* MoviesList.swift in Sources */,
 				3E0FEE4727F226730086C57C /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EDC025C27FF2A95006145DA /* myImdbPetAppTests.swift in Sources */,
+				3E10429028031C9100A18CB7 /* AuthnticationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +654,14 @@
 				version = 8.9.1;
 			};
 		};
+		3E65279228045D270037BDAE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -644,6 +684,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3E08292227FDFF1800B4D877 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		3E65279328045D270037BDAE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3E65279228045D270037BDAE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 
