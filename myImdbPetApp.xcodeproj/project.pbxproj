@@ -30,10 +30,10 @@
 		3E643F6527F9EB50002CB32E /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E643F6427F9EB50002CB32E /* Statistics.storyboard */; };
 		3E643F6727F9EDE2002CB32E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E643F6627F9EDE2002CB32E /* Profile.storyboard */; };
 		3E646BB727F87AD5006A9ECA /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E646BB627F87AD5006A9ECA /* BaseTableViewCell.swift */; };
-		3E65279428045D270037BDAE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3E65279328045D270037BDAE /* Alamofire */; };
 		3E6F3962280065700074A952 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F3961280065700074A952 /* LogInViewController.swift */; };
 		3E6F3964280066530074A952 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F3963280066530074A952 /* User.swift */; };
 		3E6F39672800677F0074A952 /* BaseAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F39662800677F0074A952 /* BaseAuthViewController.swift */; };
+		3E8B426F280D9EDF00BE6495 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3E8B426E280D9EDF00BE6495 /* Kingfisher */; };
 		3EC3C9D927F626EB00442A7F /* StandartMovieCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C9D727F626EB00442A7F /* StandartMovieCell.xib */; };
 		3EC3C9DA27F626EB00442A7F /* StandartMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C9D827F626EB00442A7F /* StandartMovieCell.swift */; };
 		3EC6BA9427FDAD7F00DB56DA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6BA9327FDAD7F00DB56DA /* AuthViewController.swift */; };
@@ -95,11 +95,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E65279428045D270037BDAE /* Alamofire in Frameworks */,
 				3E08292827FDFF1800B4D877 /* FirebaseDatabase in Frameworks */,
 				3E08292A27FDFF1800B4D877 /* FirebaseFirestore in Frameworks */,
 				3E08292427FDFF1800B4D877 /* FirebaseAnalytics in Frameworks */,
 				3E08292627FDFF1800B4D877 /* FirebaseAuth in Frameworks */,
+				3E8B426F280D9EDF00BE6495 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +253,7 @@
 				3E08292527FDFF1800B4D877 /* FirebaseAuth */,
 				3E08292727FDFF1800B4D877 /* FirebaseDatabase */,
 				3E08292927FDFF1800B4D877 /* FirebaseFirestore */,
-				3E65279328045D270037BDAE /* Alamofire */,
+				3E8B426E280D9EDF00BE6495 /* Kingfisher */,
 			);
 			productName = myImdbPetApp;
 			productReference = 3E18A35A27F20BE5008C73F4 /* myImdbPetApp.app */;
@@ -307,7 +307,7 @@
 			mainGroup = 3E18A35127F20BE5008C73F4;
 			packageReferences = (
 				3E08292227FDFF1800B4D877 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				3E65279228045D270037BDAE /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3E8B426D280D9EDF00BE6495 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 3E18A35B27F20BE5008C73F4 /* Products */;
 			projectDirPath = "";
@@ -654,12 +654,12 @@
 				version = 8.9.1;
 			};
 		};
-		3E65279228045D270037BDAE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		3E8B426D280D9EDF00BE6495 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 7.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -685,10 +685,10 @@
 			package = 3E08292227FDFF1800B4D877 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		3E65279328045D270037BDAE /* Alamofire */ = {
+		3E8B426E280D9EDF00BE6495 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3E65279228045D270037BDAE /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = 3E8B426D280D9EDF00BE6495 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 

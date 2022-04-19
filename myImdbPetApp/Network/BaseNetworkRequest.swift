@@ -10,6 +10,7 @@ import AVFoundation
 
 final class BaseNetworkRequest{
     private static let instance = BaseNetworkRequest()
+    private static let key = "k_k6n2nmvu"
     
     init(){}
     
@@ -49,6 +50,41 @@ final class BaseNetworkRequest{
     
     func fetchMostPopularMovies(handler: @escaping ((Result<MoviesList>)) -> Void){
         makeGetRequest(url: "https://imdb-api.com/API/MostPopularMovies/k_k6n2nmvu", objectType: MoviesList.self, holder: handler)
+    }
+    
+    
+    func fetchPosterForMovieID (id:String, holder: @escaping (String?) -> Void){
+        guard let reqURL = URL(string: "https://imdb-api.com/API/Posters/\(BaseNetworkRequest.key)/\(id)") else {
+            print("return")
+            return
+        }
+        let session = URLSession.shared
+        
+        let request = URLRequest(url: reqURL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 60)
+        
+        let task = session.dataTask(with: request, completionHandler: { data, response, error in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            guard let data = data else {
+                print("Data not found")
+                return
+            }
+            do{
+                let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String:Any]
+                let posters = json["posters"] as! [Any]
+                guard posters.count > 0  else {return}
+                let poster = posters[0] as! [String:Any]
+                let link = poster["link"] as? String
+                holder(link)
+            }
+            catch{
+                print("Faced error while processing obtained data")
+            }
+        })
+        
+        task.resume()
     }
 }
 
