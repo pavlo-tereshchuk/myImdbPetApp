@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,7 +21,7 @@
                         <rect key="frame" x="1" y="2" width="469" height="165"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ytw-uu-Vxp">
-                                <rect key="frame" x="5" y="0.0" width="174" height="164"/>
+                                <rect key="frame" x="5" y="7" width="174" height="151"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWq-XZ-wLk">
                                 <rect key="frame" x="184" y="5" width="280" height="23"/>
@@ -33,10 +34,10 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2z-a2-Ydh">
-                                <rect key="frame" x="184" y="33" width="41" height="21"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2z-a2-Ydh">
+                                <rect key="frame" x="184" y="30" width="280" height="13"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -47,10 +48,11 @@
                             <constraint firstItem="yWq-XZ-wLk" firstAttribute="top" secondItem="8yk-Lc-9zx" secondAttribute="top" constant="5" id="FNV-nG-OAU"/>
                             <constraint firstItem="yWq-XZ-wLk" firstAttribute="leading" secondItem="ytw-uu-Vxp" secondAttribute="trailing" constant="5" id="J0S-SA-yhL"/>
                             <constraint firstAttribute="trailing" secondItem="ytw-uu-Vxp" secondAttribute="trailing" constant="290" id="Ll8-sX-zhD"/>
-                            <constraint firstAttribute="bottom" secondItem="ytw-uu-Vxp" secondAttribute="bottom" constant="1" id="QWC-yH-Otw"/>
+                            <constraint firstAttribute="bottom" secondItem="ytw-uu-Vxp" secondAttribute="bottom" constant="7" id="QWC-yH-Otw"/>
+                            <constraint firstAttribute="trailing" secondItem="x2z-a2-Ydh" secondAttribute="trailing" constant="5" id="ecO-9x-yPW"/>
                             <constraint firstItem="x2z-a2-Ydh" firstAttribute="leading" secondItem="ytw-uu-Vxp" secondAttribute="trailing" constant="5" id="fmg-m6-lxS"/>
-                            <constraint firstItem="ytw-uu-Vxp" firstAttribute="top" secondItem="8yk-Lc-9zx" secondAttribute="top" id="ncI-F7-9RS"/>
-                            <constraint firstItem="x2z-a2-Ydh" firstAttribute="top" secondItem="yWq-XZ-wLk" secondAttribute="bottom" constant="5" id="pT8-QD-bXM"/>
+                            <constraint firstItem="ytw-uu-Vxp" firstAttribute="top" secondItem="8yk-Lc-9zx" secondAttribute="top" constant="7" id="ncI-F7-9RS"/>
+                            <constraint firstItem="x2z-a2-Ydh" firstAttribute="top" secondItem="yWq-XZ-wLk" secondAttribute="bottom" constant="2" id="pT8-QD-bXM"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -68,7 +70,12 @@
                 <outlet property="titleLable" destination="yWq-XZ-wLk" id="iA2-2t-nKX"/>
                 <outlet property="yearLable" destination="x2z-a2-Ydh" id="QXu-8o-SK2"/>
             </connections>
-            <point key="canvasLocation" x="274.63768115942031" y="155.69196428571428"/>
+            <point key="canvasLocation" x="327" y="159"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

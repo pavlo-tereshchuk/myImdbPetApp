@@ -13,7 +13,7 @@ class MovieViewController : UIViewController{
     
     @IBOutlet weak var titleLable:UILabel!
     @IBOutlet weak var yearLable:UILabel!
-    @IBOutlet weak var titleImage: UIImageView!
+    @IBOutlet weak var frontImage: UIImageView!
     private var movie:Movie?
     private var highResPoster:String?
     
@@ -21,24 +21,37 @@ class MovieViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //figureBackground()
         if let movie = movie {
-            titleLable.text = movie.title
+            titleLable.text = movie.fullTitle
             yearLable.text = String(movie.year)
-            BaseNetworkRequest.getInstance().fetchPosterForMovieID(id: movie.id, holder: { [weak self] link in
-                if let strongSelf = self{
-                    DispatchQueue.main.async {
-                        if let link = link{
-                            strongSelf.highResPoster = link
-                            strongSelf.loadImage(urlString: strongSelf.highResPoster!)
-                        } else {
-                            strongSelf.loadImage(urlString: movie.image)
-                        }
+            obtainHighResPoster(movie: movie)
+            frontImage.applyShadow(cornerRadius: 0)
+        }
+    }
+    
+    
+    func figureBackground(){
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
+        blurredEffectView.frame = self.view.bounds
+//        self.view.alpha = 0.45
+        self.view.addSubview(blurredEffectView)
+    }
+    
+    func obtainHighResPoster(movie:Movie){
+        BaseNetworkRequest.getInstance().fetchPosterForMovieID(id: movie.id, holder: { [weak self] link in
+            if let strongSelf = self{
+                DispatchQueue.main.async {
+                    if let link = link{
+                        strongSelf.highResPoster = link
+                        strongSelf.loadImage(urlString: strongSelf.highResPoster!)
+                    } else {
+                        strongSelf.loadImage(urlString: movie.image)
                     }
                 }
-            })
-        }
-    
-        
+            }
+        })
     }
     
     func configure(Movie movie:Movie){
@@ -51,12 +64,10 @@ class MovieViewController : UIViewController{
     
     func loadImage(urlString: String) {
         let url = URL(string: urlString)
-        print("#######################################")
-        print(urlString)
-        let processor = DownsamplingImageProcessor(size: titleImage.bounds.size)
+        let processor = DownsamplingImageProcessor(size: self.view.bounds.size)
                      |> RoundCornerImageProcessor(cornerRadius: 2)
-        titleImage.kf.indicatorType = .activity
-        titleImage.kf.setImage(
+        frontImage.kf.indicatorType = .activity
+        frontImage.kf.setImage(
             with: url,
             options: [
                 .processor(processor),
@@ -66,14 +77,13 @@ class MovieViewController : UIViewController{
             ])
         {
             [weak self] result in
-            switch result {
-            case .success(let value):
-                print("Jobdone for: \(value.source.url?.absoluteString ?? "")")
-            case .failure(let error):
-                if let strongSelf = self{
+            if let strongSelf = self{
+                switch result {
+                case .success(let value):
+                    strongSelf.view.backgroundColor = UIColor(patternImage: value.image).withAlphaComponent(50)
+                case .failure(let error):
                     strongSelf.present(error: error)
                 }
-                print("Job failed: \(error.localizedDescription)")
             }
         }
     }
@@ -83,3 +93,5 @@ class MovieViewController : UIViewController{
     
     
 }
+
+

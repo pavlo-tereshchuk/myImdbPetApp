@@ -46,7 +46,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chart.bar.xaxis" catalog="system" width="32" height="32"/>
+        <image name="chart.bar.xaxis" catalog="system" width="128" height="98"/>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

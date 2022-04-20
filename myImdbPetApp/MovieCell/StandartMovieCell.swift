@@ -27,7 +27,7 @@ class StandartMovieCell: BaseTableViewCell {
         titleLable.text = title
         yearLable.text = year
         if let data = try? Data(contentsOf: URL(string:poster)!){
-            self.posterImage.image = UIImage(data: data)
+            self.posterImage.image = UIImage(data: data)?.withRoundedCorners(radius: 10)
         }
     }
     
@@ -42,10 +42,9 @@ class StandartMovieCell: BaseTableViewCell {
             roundedRect: bounds,
             cornerRadius: 8.0
         ).cgPath
+        containerView.layer.borderWidth = 0.5
         containerView.applyShadow(cornerRadius: 8)
         posterImage.contentMode = .scaleAspectFit
-        posterImage.layer.cornerRadius = 8
-        posterImage.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
     }
     
 }

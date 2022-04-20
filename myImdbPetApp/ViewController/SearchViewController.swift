@@ -10,15 +10,19 @@ import UIKit
 class SearchViewController: UIViewController {
     @IBOutlet var mainTable: UITableView!
     private let refreshControl = UIRefreshControl()
+    private let searchBar = UISearchBar()
     private let network = BaseNetworkRequest.getInstance()
     var contents = [Movie]()
 
+//    MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         getContent()
         setUpUITable()
+        setSearchTab()
     }
     
+//    MARK: - UI
     func setUpUITable(){
         mainTable.dataSource = self
         mainTable.delegate = self
@@ -36,8 +40,34 @@ class SearchViewController: UIViewController {
         refreshControl.attributedTitle = NSAttributedString(string: "Updating")
     }
     
+    func setSearchTab(){
+        searchBar.delegate = self
+        searchBar.sizeToFit()
+        navigationItem.rightBarButtonItem?.tintColor = .black
+        showSearch(show: false)
+    }
+    
+    func showSearch(show:Bool){
+        navigationItem.rightBarButtonItem = show ? nil : UIBarButtonItem(barButtonSystemItem: .search,
+                                                                         target: self,
+                                                                         action: #selector(showSearchItem(_:)))
+        navigationItem.titleView = show ? searchBar : nil
+        searchBar.showsCancelButton = show
+    }
+    
+    
+//    MARK: - Functionality
     @objc func refreshMoviesList(_ sender: Any){
         getContent()
+    }
+    
+    @objc func handleTap(_ sender: Any){
+        searchBar.resignFirstResponder()
+    }
+    
+    @objc func showSearchItem(_ sender:Any){
+        showSearch(show: true)
+        searchBar.becomeFirstResponder()
     }
     
     func getContent(){
@@ -45,13 +75,21 @@ class SearchViewController: UIViewController {
             if let strongSelf = self{
                 switch handler{
                     case .success(let data):
+                    if(data.items.count == 0){
+                        DispatchQueue.main.async {
+                            strongSelf.present(message: data.errorMessage)
+                        }
+                        return
+                    }
                     strongSelf.contents = data.items
                     DispatchQueue.main.async {
                         strongSelf.mainTable.reloadData()
                         strongSelf.refreshControl.endRefreshing()
                     }
                     case .error(let error):
-                    strongSelf.present(error: error)
+                    DispatchQueue.main.async {
+                        strongSelf.present(error: error)
+                    }
                 }
             }
         })
@@ -61,6 +99,8 @@ class SearchViewController: UIViewController {
     
 }
 
+
+//MARK: - Extension for UITable item
 extension SearchViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,7 +109,7 @@ extension SearchViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StandartMovieCell.identifier, for: indexPath) as! (StandartMovieCell)
-        cell.configure(Image: "", Title: contents[indexPath.row].title, Year: contents[indexPath.row].year, Poster: contents[indexPath.row].image)
+        cell.configure(Image: "", Title: contents[indexPath.row].title, Year: contents[indexPath.row].year + ", " + contents[indexPath.row].crew, Poster: contents[indexPath.row].image)
         return cell
     }
     
@@ -84,11 +124,28 @@ extension SearchViewController : UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension UIViewController{
+//MARK: - Extension for UISearchDelegate
+extension SearchViewController:UISearchBarDelegate{
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        showSearch(show: false)
+    }
     
-    func present(error:LocalizedError){
-        let dialogMessage = UIAlertController(title: "Error!", message: error.errorDescription, preferredStyle: .alert)
-        dialogMessage.addAction(UIAlertAction(title: "Dismiss", style: .destructive))
-        self.present(dialogMessage, animated: true, completion: nil)
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        if let searchText = searchBar.text{
+            network.fetchMovieSearch(searchLine: searchText, handler: {[weak self] handler in
+                if let strongSelf = self{
+                    switch handler{
+                    case .success(let data):
+                        print(data)
+                    case .error(let error):
+                        print(error)
+                    }
+                }
+            })
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }

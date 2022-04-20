@@ -11,6 +11,7 @@
 		3E08292627FDFF1800B4D877 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3E08292527FDFF1800B4D877 /* FirebaseAuth */; };
 		3E08292827FDFF1800B4D877 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3E08292727FDFF1800B4D877 /* FirebaseDatabase */; };
 		3E08292A27FDFF1800B4D877 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3E08292927FDFF1800B4D877 /* FirebaseFirestore */; };
+		3E0B74C3280F511300A44D0A /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0B74C2280F511300A44D0A /* Search.swift */; };
 		3E0FEE4727F226730086C57C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FEE4627F226730086C57C /* Movie.swift */; };
 		3E10428C2802F39500A18CB7 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E10428B2802F39500A18CB7 /* Validation.swift */; };
 		3E10428E2802F3AD00A18CB7 /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E10428D2802F3AD00A18CB7 /* Exceptions.swift */; };
@@ -42,6 +43,7 @@
 		3EDC025C27FF2A95006145DA /* myImdbPetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC025B27FF2A95006145DA /* myImdbPetAppTests.swift */; };
 		3EDC026327FF48E8006145DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC026227FF48E8006145DA /* Constants.swift */; };
 		3EEC9FF827FC98E600B2D5B4 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FF727FC98E600B2D5B4 /* Auth.storyboard */; };
+		3EF30EC3280F16D0004B5717 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF30EC2280F16D0004B5717 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E0B74C2280F511300A44D0A /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		3E0FEE4627F226730086C57C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		3E10428B2802F39500A18CB7 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		3E10428D2802F3AD00A18CB7 /* Exceptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exceptions.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 		3EDC025B27FF2A95006145DA /* myImdbPetAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myImdbPetAppTests.swift; sourceTree = "<group>"; };
 		3EDC026227FF48E8006145DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3EEC9FF727FC98E600B2D5B4 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		3EF30EC2280F16D0004B5717 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				3E0FEE4627F226730086C57C /* Movie.swift */,
 				3E10428D2802F3AD00A18CB7 /* Exceptions.swift */,
 				3E6F3963280066530074A952 /* User.swift */,
+				3E0B74C2280F511300A44D0A /* Search.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				3EC6BA9527FDAE8B00DB56DA /* Utilities.swift */,
+				3EF30EC2280F16D0004B5717 /* Extensions.swift */,
 				3E10428B2802F39500A18CB7 /* Validation.swift */,
 				3EDC026227FF48E8006145DA /* Constants.swift */,
 				3E646BB627F87AD5006A9ECA /* BaseTableViewCell.swift */,
@@ -360,8 +366,10 @@
 				3E17856127F7356600D99618 /* MovieViewController.swift in Sources */,
 				3EDC026327FF48E8006145DA /* Constants.swift in Sources */,
 				3ED127692805E1830083B6DE /* BaseNetworkRequest.swift in Sources */,
+				3E0B74C3280F511300A44D0A /* Search.swift in Sources */,
 				3E10428C2802F39500A18CB7 /* Validation.swift in Sources */,
 				3E6F3964280066530074A952 /* User.swift in Sources */,
+				3EF30EC3280F16D0004B5717 /* Extensions.swift in Sources */,
 				3E646BB727F87AD5006A9ECA /* BaseTableViewCell.swift in Sources */,
 				3E18A36827F20BE5008C73F4 /* myImdbPetApp.xcdatamodeld in Sources */,
 				3E6F3962280065700074A952 /* LogInViewController.swift in Sources */,
@@ -532,6 +540,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NY7D97XJH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myImdbPetApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -559,6 +568,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NY7D97XJH8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = myImdbPetApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
