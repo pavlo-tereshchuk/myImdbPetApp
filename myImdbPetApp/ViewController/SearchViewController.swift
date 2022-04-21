@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SearchViewController: UIViewController {
     @IBOutlet var mainTable: UITableView!
@@ -13,11 +14,12 @@ class SearchViewController: UIViewController {
     private let searchBar = UISearchBar()
     private let network = BaseNetworkRequest.getInstance()
     var contents = [Movie]()
+    var top250Contents = [Movie]()
 
 //    MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        getContent()
+        getTop250Content()
         setUpUITable()
         setSearchTab()
     }
@@ -53,24 +55,30 @@ class SearchViewController: UIViewController {
                                                                          action: #selector(showSearchItem(_:)))
         navigationItem.titleView = show ? searchBar : nil
         searchBar.showsCancelButton = show
+        tableContentsSwitch(search: show)
     }
     
+    func tableContentsSwitch(search:Bool){
+        if search {
+            top250Contents = contents
+            contents = [Movie]()
+        } else {
+            contents = top250Contents
+        }
+        mainTable.reloadData()
+    }
     
 //    MARK: - Functionality
     @objc func refreshMoviesList(_ sender: Any){
-        getContent()
+        getTop250Content()
     }
-    
-    @objc func handleTap(_ sender: Any){
-        searchBar.resignFirstResponder()
-    }
-    
+
     @objc func showSearchItem(_ sender:Any){
         showSearch(show: true)
         searchBar.becomeFirstResponder()
     }
     
-    func getContent(){
+    func getTop250Content(){
         network.fetchMostPopularMovies(handler: {[weak self] handler in
             if let strongSelf = self{
                 switch handler{
@@ -95,7 +103,23 @@ class SearchViewController: UIViewController {
         })
     }
             
-    
+    func getSearchContent(searchText:String){
+        network.fetchMovieSearch(searchLine: searchText, handler: {[weak self] handler in
+            if let strongSelf = self{
+                switch handler{
+                case .success(let data):
+                    strongSelf.contents = Array(data.produceMovieArray()[0...5])
+                    DispatchQueue.main.async {
+                        strongSelf.mainTable.reloadData()
+                    }
+                case .error(let error):
+                    DispatchQueue.main.async {
+                        strongSelf.present(error: error)
+                    }
+                }
+            }
+        })
+    }
     
 }
 
@@ -130,22 +154,21 @@ extension SearchViewController:UISearchBarDelegate{
         showSearch(show: false)
     }
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        if let searchText = searchBar.text{
-            network.fetchMovieSearch(searchLine: searchText, handler: {[weak self] handler in
-                if let strongSelf = self{
-                    switch handler{
-                    case .success(let data):
-                        print(data)
-                    case .error(let error):
-                        print(error)
-                    }
-                }
-            })
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let text = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        if (text.count > 5){
+            getSearchContent(searchText: searchText)
+        } else if (text.count == 0 && contents.count > 0){
+            contents.removeAll()
+            mainTable.reloadData()
         }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text, text.count > 0 {
+            getSearchContent(searchText: text)
+        }
         searchBar.resignFirstResponder()
     }
 }

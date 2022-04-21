@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import Kingfisher
 
 extension UIViewController{
     
@@ -21,6 +22,24 @@ extension UIViewController{
         let dialogMessage = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
         dialogMessage.addAction(UIAlertAction(title: "Dismiss", style: .destructive))
         self.present(dialogMessage, animated: true, completion: nil)
+    }
+}
+
+
+extension UITableViewCell{
+    func loadImage(urlString: String, image: UIImageView, cornerRadius: CGFloat) {
+        let url = URL(string: urlString)
+        let processor = DownsamplingImageProcessor(size: image.bounds.size)
+                     |> RoundCornerImageProcessor(cornerRadius: cornerRadius)
+        image.kf.indicatorType = .activity
+        image.kf.setImage(
+            with: url,
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
     }
 }
 
@@ -55,7 +74,22 @@ extension UIImage {
             UIGraphicsEndImageContext()
             return image
         }
+}
+
+extension NSRegularExpression {
+    convenience init(_ pattern: String) {
+        do {
+            try self.init(pattern: pattern)
+        } catch {
+            preconditionFailure("Illegal regular expression: \(pattern).")
+        }
     }
+    
+    func matches(_ string: String) -> Bool {
+            let range = NSRange(location: 0, length: string.utf16.count)
+            return firstMatch(in: string, options: [], range: range) != nil
+    }
+}
 
 
 

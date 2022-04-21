@@ -26,9 +26,7 @@ class StandartMovieCell: BaseTableViewCell {
     public func configure(Image image:String, Title title:String, Year year:String, Poster poster:String){
         titleLable.text = title
         yearLable.text = year
-        if let data = try? Data(contentsOf: URL(string:poster)!){
-            self.posterImage.image = UIImage(data: data)?.withRoundedCorners(radius: 10)
-        }
+        loadImage(urlString: poster, image: self.posterImage, cornerRadius: 4)
     }
     
 

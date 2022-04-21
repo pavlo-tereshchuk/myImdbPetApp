@@ -24,6 +24,7 @@
 		3E18A36827F20BE5008C73F4 /* myImdbPetApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E18A36627F20BE5008C73F4 /* myImdbPetApp.xcdatamodeld */; };
 		3E18A36D27F20BEA008C73F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E18A36B27F20BEA008C73F4 /* LaunchScreen.storyboard */; };
 		3E234DEE27FDE970007DC7DC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E234DED27FDE970007DC7DC /* SignUpViewController.swift */; };
+		3E2A0FAD2811AD1C00FC2062 /* MovieBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A0FAC2811AD1C00FC2062 /* MovieBasic.swift */; };
 		3E4916FD28061F1E00917517 /* MoviesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4916FC28061F1E00917517 /* MoviesList.swift */; };
 		3E55575C27FDBE7500CEC4A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E55575B27FDBE7500CEC4A7 /* GoogleService-Info.plist */; };
 		3E643F6127F9E2FB002CB32E /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E643F6027F9E2FB002CB32E /* Search.storyboard */; };
@@ -72,6 +73,7 @@
 		3E18A36C27F20BEA008C73F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E18A36E27F20BEA008C73F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E234DED27FDE970007DC7DC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3E2A0FAC2811AD1C00FC2062 /* MovieBasic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBasic.swift; sourceTree = "<group>"; };
 		3E4916FC28061F1E00917517 /* MoviesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesList.swift; sourceTree = "<group>"; };
 		3E55575B27FDBE7500CEC4A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3E643F6027F9E2FB002CB32E /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Search.storyboard; path = myImdbPetApp/storyboards/Search.storyboard; sourceTree = SOURCE_ROOT; };
@@ -125,6 +127,7 @@
 				3E10428D2802F3AD00A18CB7 /* Exceptions.swift */,
 				3E6F3963280066530074A952 /* User.swift */,
 				3E0B74C2280F511300A44D0A /* Search.swift */,
+				3E2A0FAC2811AD1C00FC2062 /* MovieBasic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				3EC6BA9627FDAE8B00DB56DA /* Utilities.swift in Sources */,
 				3EC6BA9427FDAD7F00DB56DA /* AuthViewController.swift in Sources */,
 				3E18A36227F20BE5008C73F4 /* SearchViewController.swift in Sources */,
+				3E2A0FAD2811AD1C00FC2062 /* MovieBasic.swift in Sources */,
 				3E17856127F7356600D99618 /* MovieViewController.swift in Sources */,
 				3EDC026327FF48E8006145DA /* Constants.swift in Sources */,
 				3ED127692805E1830083B6DE /* BaseNetworkRequest.swift in Sources */,

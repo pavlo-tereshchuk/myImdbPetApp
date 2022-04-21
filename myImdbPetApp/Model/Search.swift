@@ -8,19 +8,17 @@
 import Foundation
 
 // MARK: - Search
-struct Search: Codable {
+struct Search: Decodable {
     let searchType, expression: String
-    let results: [SearchResult]
+    let results: [MovieBasic]
     let errorMessage: String
-}
-
-// MARK: - Result
-struct SearchResult: Codable {
-    let id, resultType, image, title: String
-    let resultDescription: String
-
-    enum CodingKeys: String, CodingKey {
-        case id, resultType, image, title
-        case resultDescription = "description"
+    
+    func produceMovieArray() -> [Movie]{
+        var movieArray = [Movie]()
+        for result in results{
+            movieArray.append(Movie(from: result))
+        }
+    return movieArray
     }
 }
+

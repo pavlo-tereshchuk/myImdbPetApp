@@ -54,7 +54,7 @@ final class BaseNetworkRequest{
     
     func fetchMovieSearch(searchLine:String, handler: @escaping ((Result<Search>)) -> Void){
         let query = searchLine.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: " ", with: "%20")
-        makeGetRequest(url: "https://imdb-api.com/API/MostPopularMovies/\(BaseNetworkRequest.key)/\(query)", objectType: Search.self, holder: handler)
+        makeGetRequest(url: "https://imdb-api.com/API/SearchMovie/\(BaseNetworkRequest.key)/\(query)", objectType: Search.self, holder: handler)
     }
     
     
