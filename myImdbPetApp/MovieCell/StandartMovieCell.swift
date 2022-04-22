@@ -17,16 +17,19 @@ class StandartMovieCell: BaseTableViewCell {
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var ratingView: UIView!
     
-    public static let identifier:String = "StandartMovieCell"
+    static let identifier:String = "StandartMovieCell"
+    private let imageLoader = ImageLoader()
     
-    public static func getNib() -> UINib{
+    
+    static func getNib() -> UINib{
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    public func configure(Image image:String, Title title:String, Year year:String, Poster poster:String){
+    func configure(Image image:String, Title title:String, Year year:String, Poster poster:String){
         titleLable.text = title
         yearLable.text = year
-        loadImage(urlString: poster, image: self.posterImage, cornerRadius: 4)
+        self.imageLoader.loadImageAlt(urlString: poster, image: self.posterImage, cornerRadius: 4)
+//        self.imageLoader.loadImage(link: poster, image: self.posterImage, radius: 10)
     }
     
 

@@ -41,6 +41,9 @@
 		3EC6BA9427FDAD7F00DB56DA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6BA9327FDAD7F00DB56DA /* AuthViewController.swift */; };
 		3EC6BA9627FDAE8B00DB56DA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC6BA9527FDAE8B00DB56DA /* Utilities.swift */; };
 		3ED127692805E1830083B6DE /* BaseNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED127682805E1830083B6DE /* BaseNetworkRequest.swift */; };
+		3ED48BDC2812EA270034D7DB /* ImageCacheType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED48BDB2812EA270034D7DB /* ImageCacheType.swift */; };
+		3ED48BDE2812EAAE0034D7DB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED48BDD2812EAAE0034D7DB /* ImageCache.swift */; };
+		3ED48BE02812F9170034D7DB /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED48BDF2812F9170034D7DB /* ImageLoader.swift */; };
 		3EDC025C27FF2A95006145DA /* myImdbPetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC025B27FF2A95006145DA /* myImdbPetAppTests.swift */; };
 		3EDC026327FF48E8006145DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC026227FF48E8006145DA /* Constants.swift */; };
 		3EEC9FF827FC98E600B2D5B4 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FF727FC98E600B2D5B4 /* Auth.storyboard */; };
@@ -89,6 +92,9 @@
 		3EC6BA9327FDAD7F00DB56DA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		3EC6BA9527FDAE8B00DB56DA /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		3ED127682805E1830083B6DE /* BaseNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkRequest.swift; sourceTree = "<group>"; };
+		3ED48BDB2812EA270034D7DB /* ImageCacheType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheType.swift; sourceTree = "<group>"; };
+		3ED48BDD2812EAAE0034D7DB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		3ED48BDF2812F9170034D7DB /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		3EDC025927FF2A95006145DA /* myImdbPetAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myImdbPetAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDC025B27FF2A95006145DA /* myImdbPetAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myImdbPetAppTests.swift; sourceTree = "<group>"; };
 		3EDC026227FF48E8006145DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -192,7 +198,9 @@
 		3EC6BA9727FDAF1D00DB56DA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3ED48BDA2812EA0F0034D7DB /* Caching */,
 				3EC6BA9527FDAE8B00DB56DA /* Utilities.swift */,
+				3ED48BDF2812F9170034D7DB /* ImageLoader.swift */,
 				3EF30EC2280F16D0004B5717 /* Extensions.swift */,
 				3E10428B2802F39500A18CB7 /* Validation.swift */,
 				3EDC026227FF48E8006145DA /* Constants.swift */,
@@ -207,6 +215,15 @@
 				3ED127682805E1830083B6DE /* BaseNetworkRequest.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3ED48BDA2812EA0F0034D7DB /* Caching */ = {
+			isa = PBXGroup;
+			children = (
+				3ED48BDB2812EA270034D7DB /* ImageCacheType.swift */,
+				3ED48BDD2812EAAE0034D7DB /* ImageCache.swift */,
+			);
+			path = Caching;
 			sourceTree = "<group>";
 		};
 		3EDC025A27FF2A95006145DA /* myImdbPetAppTests */ = {
@@ -366,8 +383,11 @@
 				3EC6BA9627FDAE8B00DB56DA /* Utilities.swift in Sources */,
 				3EC6BA9427FDAD7F00DB56DA /* AuthViewController.swift in Sources */,
 				3E18A36227F20BE5008C73F4 /* SearchViewController.swift in Sources */,
+				3ED48BDC2812EA270034D7DB /* ImageCacheType.swift in Sources */,
 				3E2A0FAD2811AD1C00FC2062 /* MovieBasic.swift in Sources */,
+				3ED48BDE2812EAAE0034D7DB /* ImageCache.swift in Sources */,
 				3E17856127F7356600D99618 /* MovieViewController.swift in Sources */,
+				3ED48BE02812F9170034D7DB /* ImageLoader.swift in Sources */,
 				3EDC026327FF48E8006145DA /* Constants.swift in Sources */,
 				3ED127692805E1830083B6DE /* BaseNetworkRequest.swift in Sources */,
 				3E0B74C3280F511300A44D0A /* Search.swift in Sources */,

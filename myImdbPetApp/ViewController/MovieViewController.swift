@@ -14,6 +14,7 @@ class MovieViewController : UIViewController{
     @IBOutlet weak var titleLable:UILabel!
     @IBOutlet weak var yearLable:UILabel!
     @IBOutlet weak var frontImage: UIImageView!
+    private let imageLoader = ImageLoader()
     private var movie:Movie?
     private var highResPoster:String?
     
@@ -21,7 +22,6 @@ class MovieViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //figureBackground()
         if let movie = movie {
             titleLable.text = movie.fullTitle
             yearLable.text = String(movie.year)
@@ -40,23 +40,23 @@ class MovieViewController : UIViewController{
 
     
     func obtainHighResPoster(movie:Movie){
-        print("POSTER")
         BaseNetworkRequest.getInstance().fetchPosterForMovieID(id: movie.id, holder: { [weak self] link in
             if let strongSelf = self{
-                print("STRONGSELF")
-                    if let link = link{
-                        print("LINK: \(link)")
+                if let link = link, link.count > 0{
                         DispatchQueue.main.async {
                             strongSelf.highResPoster = link
-                            strongSelf.loadImage(urlString: strongSelf.highResPoster!, image: strongSelf.frontImage, cornerRadius: 5)
+                            strongSelf.imageLoader.loadImageAlt(urlString: strongSelf.highResPoster!,
+                                                                image: strongSelf.frontImage, cornerRadius: 5)
+//                            strongSelf.imageLoader.loadImage(link: strongSelf.highResPoster!, image: strongSelf.frontImage,
+//                                                             radius: 20, vc: strongSelf)
                         }
                     } else {
-                        print("LINK: \(movie.image)")
                         DispatchQueue.main.async {
-                            strongSelf.loadImage(urlString: movie.image, image: strongSelf.frontImage, cornerRadius: 5)
-                        }
+                            strongSelf.imageLoader.loadImageAlt(urlString: movie.image,
+                                                                image: strongSelf.frontImage, cornerRadius: 5)
                     }
                 }
+            }
         })
     }
     
@@ -65,35 +65,6 @@ class MovieViewController : UIViewController{
     func configure(Movie movie:Movie){
         self.movie = movie
     }
- 
-    func loadImage(urlString: String, image: UIImageView, cornerRadius: CGFloat) {
-        let url = URL(string: urlString)
-        let processor = DownsamplingImageProcessor(size: image.bounds.size)
-                     |> RoundCornerImageProcessor(cornerRadius: cornerRadius)
-        image.kf.indicatorType = .activity
-        image.kf.setImage(
-            with: url,
-            options: [
-                .processor(processor),
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage
-            ])
-        {
-            [weak self] result in
-            if let strongSelf = self{
-                switch result {
-                case .success(let value):
-                    print("Job done!")
-                case .failure(let error):
-                    strongSelf.present(error: error)
-                }
-            }
-        }
-    }
-    
-    
-    
     
 }
 
