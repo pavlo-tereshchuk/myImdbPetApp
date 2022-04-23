@@ -9,16 +9,7 @@ import Foundation
 import UIKit
 
 public class Utilities {
-    
-    public static func blurryButton(button:UIButton){
-        let blur = UIVisualEffectView(effect: UIBlurEffect(style:
-                    UIBlurEffect.Style.light))
-        blur.frame = button.bounds
-        blur.isUserInteractionEnabled = false //This allows touches to forward to the button.
-        button.insertSubview(blur, at: 0)
-    }
-    
-    
+//    MARK: - Validating user credentials while authenticating
     public static func validatePassword(password:String)-> Bool{
         let regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$&*]).{6,24}$"
         return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: password)

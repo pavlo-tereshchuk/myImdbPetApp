@@ -19,11 +19,19 @@ class SearchViewController: UIViewController {
 //    MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavBar()
         getTop250Content()
         setUpUITable()
         setSearchTab()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectedIndexPath = mainTable.indexPathForSelectedRow {
+            mainTable.deselectRow(at: selectedIndexPath, animated: animated)
+        }
+    }
 //    MARK: - UI
     func setUpUITable(){
         mainTable.dataSource = self
@@ -133,13 +141,13 @@ extension SearchViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StandartMovieCell.identifier, for: indexPath) as! (StandartMovieCell)
-        cell.configure(Image: "", Title: contents[indexPath.row].title, Year: contents[indexPath.row].year + ", " + contents[indexPath.row].crew, Poster: contents[indexPath.row].image)
+        cell.configure(Image: contents[indexPath.row].image, Title: contents[indexPath.row].title, Year: contents[indexPath.row].year + ", " + contents[indexPath.row].crew)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: MovieViewController.identifier) as! (MovieViewController)
-        vc.configure(Movie: contents[indexPath.row])
+        vc.configureOnID(MovieID: contents[indexPath.row].id, backImg: contents[indexPath.row].image)
         navigationController?.pushViewController(vc, animated: true)
     }
     

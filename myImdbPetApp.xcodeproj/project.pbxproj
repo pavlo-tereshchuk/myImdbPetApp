@@ -35,6 +35,7 @@
 		3E6F3962280065700074A952 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F3961280065700074A952 /* LogInViewController.swift */; };
 		3E6F3964280066530074A952 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F3963280066530074A952 /* User.swift */; };
 		3E6F39672800677F0074A952 /* BaseAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F39662800677F0074A952 /* BaseAuthViewController.swift */; };
+		3E7FC44B28140DD100C5868F /* MovieAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FC44A28140DD100C5868F /* MovieAdvanced.swift */; };
 		3E8B426F280D9EDF00BE6495 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3E8B426E280D9EDF00BE6495 /* Kingfisher */; };
 		3EC3C9D927F626EB00442A7F /* StandartMovieCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C9D727F626EB00442A7F /* StandartMovieCell.xib */; };
 		3EC3C9DA27F626EB00442A7F /* StandartMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC3C9D827F626EB00442A7F /* StandartMovieCell.swift */; };
@@ -87,6 +88,7 @@
 		3E6F3961280065700074A952 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		3E6F3963280066530074A952 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E6F39662800677F0074A952 /* BaseAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuthViewController.swift; sourceTree = "<group>"; };
+		3E7FC44A28140DD100C5868F /* MovieAdvanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAdvanced.swift; sourceTree = "<group>"; };
 		3EC3C9D727F626EB00442A7F /* StandartMovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandartMovieCell.xib; sourceTree = "<group>"; };
 		3EC3C9D827F626EB00442A7F /* StandartMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandartMovieCell.swift; sourceTree = "<group>"; };
 		3EC6BA9327FDAD7F00DB56DA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -128,12 +130,9 @@
 		3E0FEE4827F2268B0086C57C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3E4916FC28061F1E00917517 /* MoviesList.swift */,
-				3E0FEE4627F226730086C57C /* Movie.swift */,
+				3E7FC44928140D7D00C5868F /* rest */,
 				3E10428D2802F3AD00A18CB7 /* Exceptions.swift */,
 				3E6F3963280066530074A952 /* User.swift */,
-				3E0B74C2280F511300A44D0A /* Search.swift */,
-				3E2A0FAC2811AD1C00FC2062 /* MovieBasic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +192,18 @@
 				3EC6BA9327FDAD7F00DB56DA /* AuthViewController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		3E7FC44928140D7D00C5868F /* rest */ = {
+			isa = PBXGroup;
+			children = (
+				3E0B74C2280F511300A44D0A /* Search.swift */,
+				3E7FC44A28140DD100C5868F /* MovieAdvanced.swift */,
+				3E2A0FAC2811AD1C00FC2062 /* MovieBasic.swift */,
+				3E4916FC28061F1E00917517 /* MoviesList.swift */,
+				3E0FEE4627F226730086C57C /* Movie.swift */,
+			);
+			path = rest;
 			sourceTree = "<group>";
 		};
 		3EC6BA9727FDAF1D00DB56DA /* Helpers */ = {
@@ -392,6 +403,7 @@
 				3ED127692805E1830083B6DE /* BaseNetworkRequest.swift in Sources */,
 				3E0B74C3280F511300A44D0A /* Search.swift in Sources */,
 				3E10428C2802F39500A18CB7 /* Validation.swift in Sources */,
+				3E7FC44B28140DD100C5868F /* MovieAdvanced.swift in Sources */,
 				3E6F3964280066530074A952 /* User.swift in Sources */,
 				3EF30EC3280F16D0004B5717 /* Extensions.swift in Sources */,
 				3E646BB727F87AD5006A9ECA /* BaseTableViewCell.swift in Sources */,

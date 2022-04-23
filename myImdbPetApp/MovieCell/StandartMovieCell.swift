@@ -25,10 +25,10 @@ class StandartMovieCell: BaseTableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    func configure(Image image:String, Title title:String, Year year:String, Poster poster:String){
+    func configure(Image image:String, Title title:String, Year year:String){
         titleLable.text = title
         yearLable.text = year
-        self.imageLoader.loadImageAlt(urlString: poster, image: self.posterImage, cornerRadius: 4)
+        self.imageLoader.loadImageAlt(urlString: image, image: self.posterImage, cornerRadius: 4)
 //        self.imageLoader.loadImage(link: poster, image: self.posterImage, radius: 10)
     }
     

@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import Kingfisher
 
+//  MARK: - VC addons, error alerts, NavBar setup routine
 extension UIViewController{
     
     func present(error:LocalizedError){
@@ -22,6 +23,24 @@ extension UIViewController{
         let dialogMessage = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
         dialogMessage.addAction(UIAlertAction(title: "Dismiss", style: .destructive))
         self.present(dialogMessage, animated: true, completion: nil)
+    }
+    
+    func setupNavBar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithDefaultBackground()
+        
+        let backButtonAppearance = UIBarButtonItemAppearance()
+        backButtonAppearance.normal.titleTextAttributes = [.font: UIFont(name: "Arial", size: 0)!]
+        appearance.backButtonAppearance = backButtonAppearance
+
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+        navigationItem.compactAppearance = appearance
+        
+        navigationController?.navigationBar.tintColor = UIColor.hexStringToUIColor(hex: "D9B540")
+        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        navigationController?.navigationBar.barTintColor = .black
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
 }
 
@@ -58,6 +77,12 @@ extension UIImage {
             return image
         }
     
+    func resized(to size: CGSize) -> UIImage {
+        return UIGraphicsImageRenderer(size: size).image { _ in
+            draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
+    
     func decodedImage() -> UIImage {
             guard let cgImage = cgImage else { return self }
             let size = CGSize(width: cgImage.width, height: cgImage.height)
@@ -81,6 +106,30 @@ extension NSRegularExpression {
     func matches(_ string: String) -> Bool {
             let range = NSRange(location: 0, length: string.utf16.count)
             return firstMatch(in: string, options: [], range: range) != nil
+    }
+}
+        
+extension UIColor{
+    static func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+
+        var rgbValue:UInt64 = 0
+        Scanner(string: cString).scanHexInt64(&rgbValue)
+
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
 }
 

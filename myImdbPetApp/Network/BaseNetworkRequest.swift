@@ -36,6 +36,7 @@ final class BaseNetworkRequest{
                 holder(Result.error(RequestException.dataNotFound(error: error!.localizedDescription)))
                 return
             }
+            print("DATA:\(data)")
             do{
                 let decoded = try JSONDecoder().decode(T.self, from:data)
                 holder(Result.success(decoded))
@@ -57,7 +58,13 @@ final class BaseNetworkRequest{
         makeGetRequest(url: "https://imdb-api.com/API/SearchMovie/\(BaseNetworkRequest.key)/\(query)", objectType: Search.self, holder: handler)
     }
     
+    func fetchMovieOnID(ID:String, handler: @escaping ((Result<MovieAdvanced>)) -> Void){
+        makeGetRequest(url: "https://imdb-api.com/en/API/Title/\(BaseNetworkRequest.key)/\(ID)", objectType: MovieAdvanced.self, holder: handler)
+    }
     
+    
+    
+//    MARK: - Hardcoded extraction of first poster from the list in order not to create decodable classes
     func fetchPosterForMovieID (id:String, holder: @escaping (String?) -> Void){
         guard let reqURL = URL(string: "https://imdb-api.com/API/Posters/\(BaseNetworkRequest.key)/\(id)") else {
             print("return")
