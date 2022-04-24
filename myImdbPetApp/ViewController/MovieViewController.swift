@@ -27,9 +27,39 @@ class MovieViewController : UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let backgroundImg = backgroundImg, let movieID = movieID {
+        if let backgroundImg = backgroundImg{
             setupNavBar()
             setBackground(backgroundImg)
+        }
+        
+        let addButton = rightBarButtonItem(iconNameButton: "plus", selector: #selector(addNavDidTap(sender:)))
+        let otherButton = rightBarButtonItem(iconNameButton: "ellipsis.circle", selector: #selector(otherNavDidTap(sender:)))
+
+        navigationItem.leftItemsSupplementBackButton = true
+        navigationItem.rightBarButtonItems = [otherButton, addButton]
+        
+        
+    }
+    
+    
+    func rightBarButtonItem(iconNameButton: String, selector: Selector) -> UIBarButtonItem {
+        let button = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        
+        button.setImage(UIImage(systemName: iconNameButton), for: .normal)
+        button.addTarget(self, action: selector, for: .touchUpInside)
+        button.imageView?.contentMode = .scaleAspectFit
+
+        let buttonBarButton = UIBarButtonItem(customView: UIView(frame: CGRect(x: 0, y: 0, width: 25, height: 25)))
+        buttonBarButton.customView?.addSubview(button)
+        buttonBarButton.customView?.frame = button.frame
+
+        return buttonBarButton
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let movieID = movieID {
             self.fetchMovieInfo(ID: movieID)
         }
     }
@@ -44,9 +74,6 @@ class MovieViewController : UIViewController{
     }
     
     override func viewDidLayoutSubviews() {
-//        frontImage.applyShadow(cornerRadius: 0)
-//        Utilities.blurryButton(button: youtubeButton)
-//        Utilities.blurryButton(button: imdbButton)
         youtubeButton.layer.cornerRadius = 10
         youtubeButton.layer.cornerCurve = .continuous
         imdbButton.layer.cornerRadius = 10
@@ -58,7 +85,6 @@ class MovieViewController : UIViewController{
             self.view.backgroundColor = UIColor(patternImage: UIImage(data: data)!
                                         .resized(to: CGSize(width: 414, height: 725)))
                                                             .withAlphaComponent(20)
-                                                            
         }
     }
 
@@ -70,31 +96,10 @@ class MovieViewController : UIViewController{
         self.movieID = MovieID
     }
     
-//    func obtainHighResPoster(movie:Movie){
-//        BaseNetworkRequest.getInstance().fetchPosterForMovieID(id: movie.id, holder: { [weak self] link in
-//            if let strongSelf = self{
-//                if let link = link, link.count > 0{
-//                        DispatchQueue.main.async {
-//                            strongSelf.highResPoster = link
-//                            strongSelf.imageLoader.loadImageAlt(urlString: strongSelf.highResPoster!,
-//                                                                image: strongSelf.frontImage, cornerRadius: 5)
-////                            strongSelf.imageLoader.loadImage(link: strongSelf.highResPoster!, image: strongSelf.frontImage,
-////                                                             radius: 20, vc: strongSelf)
-//                        }
-//                    } else {
-//                        DispatchQueue.main.async {
-//                            strongSelf.imageLoader.loadImageAlt(urlString: movie.image,
-//                                                                image: strongSelf.frontImage, cornerRadius: 5)
-//                    }
-//                }
-//            }
-//        })
-//    }
     
     func fetchMovieInfo(ID:String){
         BaseNetworkRequest.getInstance().fetchMovieOnID(ID: ID, handler:{
             [weak self] result in
-            print("YES")
             if let strongSelf = self{
                 switch result{
                 case .success(let data):
@@ -109,6 +114,17 @@ class MovieViewController : UIViewController{
         })
     }
     
+    
+    @objc func addNavDidTap(sender:Any){
+        if let addButton = (sender as? UIButton) {
+            addButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
+        }
+    }
+    
+    @objc func otherNavDidTap(sender:Any){
+        
+    }
+
     
     
 }
