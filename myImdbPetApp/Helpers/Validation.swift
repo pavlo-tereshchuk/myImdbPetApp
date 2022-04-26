@@ -14,7 +14,7 @@ struct Validation{
             throw AuthException.InvalidValue
         }
         guard (name == "" || lastName == "" || email == "" || password == "") else {
-                    throw AuthException.EmptyFields
+            throw AuthException.EmptyFields
         }
     }
     
@@ -27,7 +27,6 @@ struct Validation{
     static func validationLastName(lastName:String?) throws -> String{
         guard let lastName = lastName else { throw AuthException.InvalidValue}
         guard lastName != "" else { throw AuthException.EmptyFields}
-        guard Utilities.validateEmail(email: lastName) else {throw AuthException.WrongEmail}
         return lastName
     }
     
